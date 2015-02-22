@@ -1,0 +1,10 @@
+/vendor
+/node_modules
+.env
+
+.idea/ #I added this for phpstorm
+composer.phar
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
