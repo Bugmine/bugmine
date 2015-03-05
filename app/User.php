@@ -9,6 +9,24 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 /**
  * Bugmine\User
  *
+ * @property integer $id
+ * @property string $name
+ * @property string $email
+ * @property string $password
+ * @property string $remember_token
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Bugmine\Group[] $groups
+ * @method static \Illuminate\Database\Query\Builder|\Bugmine\User whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Bugmine\User whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\Bugmine\User whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\Bugmine\User wherePassword($value)
+ * @method static \Illuminate\Database\Query\Builder|\Bugmine\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\Bugmine\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Bugmine\User whereUpdatedAt($value)
+ * @property-read \Bugmine\Group $group
+ * @property integer $group_id
+ * @method static \Illuminate\Database\Query\Builder|\Bugmine\User whereGroupId($value)
  */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
@@ -35,4 +53,20 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function group()
+	{
+		return $this->belongsTo('Bugmine\Group');
+	}
+
+	/**
+	 * @param $name
+	 * @return bool
+	 */
+	public function hasPermission($name)
+	{
+		return $this->group->hasPermission($name);
+	}
 }

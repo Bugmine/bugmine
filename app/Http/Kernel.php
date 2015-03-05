@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'Bugmine\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'Bugmine\Http\Middleware\RedirectIfAuthenticated',
+		'admin' => 'Bugmine\Http\Middleware\CheckAdministrator',
 	];
 
 }

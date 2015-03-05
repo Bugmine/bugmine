@@ -150,6 +150,8 @@ return [
          */
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
+		'Illuminate\Html\HtmlServiceProvider',
+		'Laracasts\Generators\GeneratorsServiceProvider',
 
 	],
 
@@ -199,6 +201,8 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 
+		'Form'=> 'Illuminate\Html\FormFacade',
+		'HTML'=> 'Illuminate\Html\HtmlFacade',
 	],
 
 ];
