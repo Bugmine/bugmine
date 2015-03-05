@@ -1,6 +1,5 @@
 <?php namespace Bugmine\Http\Controllers\Admin;
 
-use Bugmine\Http\Requests;
 use Bugmine\Http\Controllers\Controller;
 use Bugmine\User;
 
