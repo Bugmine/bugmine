@@ -102,6 +102,9 @@ return [
 	|
 	*/
 
-	'attributes' => [],
+	'attributes' => [
+		'email' => trans('forms.email'),
+		'password' => trans('forms.password'),
+	],
 
 ];
