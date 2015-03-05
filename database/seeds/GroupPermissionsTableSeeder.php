@@ -1,17 +1,16 @@
 <?php
 
+use Bugmine\Group;
+use Bugmine\Permission;
 use Illuminate\Database\Seeder;
-
-// composer require laracasts/testdummy
-use Laracasts\TestDummy\Factory as TestDummy;
 
 class GroupPermissionsTableSeeder extends Seeder {
 
     public function run()
     {
-        $userGroup = \Bugmine\Group::whereName('User')->first();
-        $developerGroup = \Bugmine\Group::whereName('Developer')->first();
-        $administratorGroup = \Bugmine\Group::whereName('Administrator')->first();
+        $userGroup = Group::whereName('User')->first();
+        $developerGroup = Group::whereName('Developer')->first();
+        $administratorGroup = Group::whereName('Administrator')->first();
 
         $userGroup->addPermission($this->getPermission('User.Index'));
         $userGroup->addPermission($this->getPermission('User.Show'));
@@ -28,6 +27,6 @@ class GroupPermissionsTableSeeder extends Seeder {
 
 
     private function getPermission($name) {
-        return \Bugmine\Permission::whereName($name)->first();
+        return Permission::whereName($name)->first();
     }
 }

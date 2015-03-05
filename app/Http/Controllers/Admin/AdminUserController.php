@@ -3,7 +3,6 @@
 use Bugmine\Http\Requests;
 use Bugmine\Http\Controllers\Controller;
 use Bugmine\User;
-use DB;
 
 class AdminUserController extends Controller {
 
