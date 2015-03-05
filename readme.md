@@ -1,5 +1,5 @@
 ## Bugmine
-
+[![Build Status](https://travis-ci.org/Bugmine/bugmine.svg)](https://travis-ci.org/Bugmine/bugmine)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/d88f9991-872f-4c7b-be35-cbd6ddafa1bf/mini.png)](https://insight.sensiolabs.com/projects/d88f9991-872f-4c7b-be35-cbd6ddafa1bf)
 
 ### Description
